@@ -1,0 +1,37 @@
+{
+  "name": "personal-agent-share-runtime",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/test.mjs",
+    "lint": "node scripts/lint.mjs",
+    "typecheck": "node scripts/check-syntax.mjs",
+    "build": "node scripts/check-syntax.mjs",
+    "dev": "node --experimental-strip-types apps/share-gateway/src/server/dev.ts",
+    "dev:productized": "node --experimental-strip-types apps/share-gateway/src/productization/dev.ts",
+    "dev:productized:outbound": "node --experimental-strip-types apps/share-gateway/src/productization/devOutbound.ts",
+    "dev:web-react": "vite --config apps/share-web-react/vite.config.ts",
+    "build:web-react": "vite build --config apps/share-web-react/vite.config.ts",
+    "test:web-react": "node scripts/test.mjs apps/share-web-react/test",
+    "test:contract": "node scripts/test.mjs apps/share-gateway/test/productization/routes.test.ts apps/share-gateway/test/productization/hostCommands.test.ts apps/share-gateway/test/productization/hostRuntime.test.ts apps/share-gateway/test/productization/hostTransport.test.ts apps/share-gateway/test/productization/agUiEvents.test.ts",
+    "test:integration": "node scripts/test.mjs apps/share-gateway/test/productization/relayStore.test.ts apps/share-gateway/test/productization/taskFlow.test.ts apps/share-gateway/test/productization/preview.test.ts apps/share-gateway/test/productization/controls.test.ts apps/share-gateway/test/productization/httpServer.test.ts apps/share-gateway/test/productization/hostTransport.test.ts apps/share-gateway/test/productization/hostClient.test.ts apps/share-gateway/test/productization/devOutbound.test.ts apps/share-gateway/test/routes apps/share-gateway/test/server",
+    "test:security": "node scripts/test.mjs apps/share-gateway/test/productization/security.test.ts apps/share-gateway/test/productization/taskFlow.test.ts apps/share-gateway/test/productization/approvals.test.ts apps/share-gateway/test/productization/preview.test.ts apps/share-gateway/test/productization/controls.test.ts apps/share-gateway/test/productization/hostTransport.test.ts apps/share-gateway/test/policy",
+    "test:e2e": "node scripts/test.mjs apps/share-web/e2e",
+    "test:e2e:pixel": "node scripts/test.mjs apps/share-web/e2e/pixel-baseline.test.ts",
+    "test:smoke:real-adapter": "node scripts/test.mjs apps/share-gateway/test/adapters"
+  },
+  "dependencies": {
+    "@assistant-ui/react": "^0.14.7",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.2.0",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
+    "vite": "^7.3.3"
+  }
+}

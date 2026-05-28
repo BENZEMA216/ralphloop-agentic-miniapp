@@ -1,0 +1,10 @@
+.superpowers/
+.worktrees/
+.external/
+.env
+.env.*
+node_modules/
+*.log
+logs/
+.gstack/
+apps/share-web-react/dist/
